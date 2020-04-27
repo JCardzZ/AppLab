@@ -17,7 +17,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.JoinColumn;
 
 @Entity
-public class Usuario implements Serializable {
+public class User implements Serializable {
 
 	private static final long serialVersionUID = -6833167247955613395L;
 
@@ -44,10 +44,10 @@ public class Usuario implements Serializable {
 	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
 
-	public Usuario() {
+	public User() {
 	}
 
-	public Usuario(Long id) {
+	public User(Long id) {
 		this.id = id;
 
 	}
@@ -150,7 +150,7 @@ public class Usuario implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Usuario other = (Usuario) obj;
+		User other = (User) obj;
 		if (confirmPassword == null) {
 			if (other.confirmPassword != null)
 				return false;
