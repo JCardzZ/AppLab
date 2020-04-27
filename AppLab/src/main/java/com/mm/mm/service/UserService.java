@@ -1,9 +1,9 @@
 package com.mm.mm.service;
 
 
-import com.mm.mm.Exceptions.UsernameOrIdNotFound;
 import com.mm.mm.changepass.ChangePasswordForm;
 import com.mm.mm.entity.User;
+import com.mm.mm.exceptions.UsernameOrIdNotFound;
 
 public interface UserService {
 

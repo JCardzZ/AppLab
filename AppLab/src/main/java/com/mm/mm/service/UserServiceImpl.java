@@ -9,10 +9,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.mm.mm.Exceptions.CustomeFieldValidationException;
-import com.mm.mm.Exceptions.UsernameOrIdNotFound;
 import com.mm.mm.changepass.ChangePasswordForm;
 import com.mm.mm.entity.User;
+import com.mm.mm.exceptions.CustomeFieldValidationException;
+import com.mm.mm.exceptions.UsernameOrIdNotFound;
 import com.mm.mm.repository.UserRepository;
 
 @Service

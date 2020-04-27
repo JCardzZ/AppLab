@@ -1,4 +1,4 @@
-package com.mm.mm.Exceptions;
+package com.mm.mm.exceptions;
 
 public class CustomeFieldValidationException extends Exception{
 

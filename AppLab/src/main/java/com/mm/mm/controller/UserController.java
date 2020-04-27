@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.mm.mm.Exceptions.CustomeFieldValidationException;
-import com.mm.mm.Exceptions.UsernameOrIdNotFound;
 import com.mm.mm.changepass.ChangePasswordForm;
 import com.mm.mm.entity.Role;
 import com.mm.mm.entity.User;
+import com.mm.mm.exceptions.CustomeFieldValidationException;
+import com.mm.mm.exceptions.UsernameOrIdNotFound;
 import com.mm.mm.repository.RolRepository;
 import com.mm.mm.service.UserService;
 
