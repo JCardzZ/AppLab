@@ -12,44 +12,62 @@ import javax.persistence.Id;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import org.hibernate.annotations.GenericGenerator;
+
+
 
 import javax.persistence.JoinColumn;
 
-@Entity
-public class User implements Serializable {
+@Entity 
+public class User implements Serializable{
 
-	private static final long serialVersionUID = -6833167247955613395L;
+	private static final long serialVersionUID = 1671417246199538663L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-	@GenericGenerator(name = "native", strategy = "native")
+	@GeneratedValue(strategy=GenerationType.AUTO, generator="native")
+	@GenericGenerator(name="native",strategy="native")
 	private Long id;
-
+	
 	@Column
+	@NotBlank(message = "El Nombre es obligatorio")
+	@Size(min=1,max=100,message="No se cumple las reglas del tamano")
 	private String firstName;
 	@Column
+	@NotBlank
 	private String lastName;
-	@Column(unique = true)
+	@Column
+	@NotBlank
 	private String email;
+	@NotBlank
 	@Column(unique = true)
+	private String dui;
+	@Column
+	@NotBlank
 	private String username;
 	@Column
+	@NotBlank
 	private String password;
-
+	
 	@Transient
 	private String confirmPassword;
-
+	
+	@Size(min=1)
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(name = "user_roles",
+			joinColumns=@JoinColumn(name="user_id"),
+			inverseJoinColumns=@JoinColumn(name="role_id"))
 	private Set<Role> roles;
 
 	public User() {
+		super();
 	}
 
 	public User(Long id) {
+		super();
 		this.id = id;
-
 	}
 
 	public Long getId() {
@@ -115,15 +133,19 @@ public class User implements Serializable {
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
+	
+	public String getDui() {
+		return dui;
+	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public void setDui(String dui) {
+		this.dui = dui;
 	}
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", dui="
+				+ dui + ", username=" + username + ", password=" + password + ", confirmPassword=" + confirmPassword
 				+ ", roles=" + roles + "]";
 	}
 
@@ -132,6 +154,7 @@ public class User implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((confirmPassword == null) ? 0 : confirmPassword.hashCode());
+		result = prime * result + ((dui == null) ? 0 : dui.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
@@ -155,6 +178,11 @@ public class User implements Serializable {
 			if (other.confirmPassword != null)
 				return false;
 		} else if (!confirmPassword.equals(other.confirmPassword))
+			return false;
+		if (dui == null) {
+			if (other.dui != null)
+				return false;
+		} else if (!dui.equals(other.dui))
 			return false;
 		if (email == null) {
 			if (other.email != null)
@@ -193,5 +221,7 @@ public class User implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 
 }

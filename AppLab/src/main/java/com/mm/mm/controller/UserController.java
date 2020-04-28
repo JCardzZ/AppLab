@@ -173,7 +173,7 @@ public class UserController {
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(e.getMessage());
 		}
-		return ResponseEntity.ok("Success");
+		return ResponseEntity.ok("Exito");
 	}
 	
 }

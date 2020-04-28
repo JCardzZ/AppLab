@@ -55,7 +55,6 @@ public class WebSecurityConfig  extends  WebSecurityConfigurerAdapter{
     
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception { 
-    	//Especificar el encargado del login y encriptacion del password
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
     

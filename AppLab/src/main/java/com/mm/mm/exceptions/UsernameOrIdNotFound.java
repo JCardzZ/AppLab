@@ -2,9 +2,6 @@ package com.mm.mm.exceptions;
 
 public class UsernameOrIdNotFound extends Exception {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1668398822129870029L;
 
 	public UsernameOrIdNotFound() {
