@@ -1,3 +1,4 @@
+App desarrollada con Spring MVC y Spring Security
 Laboratorio ll
 El mini sistema consta de dos perfil ya resgistrados.
 El dui debe ser unico, tal como lo es en la realidad ya que si no lo es arrojar un error, NO SE PUEDEN INGRESAR DUI REPETIDOS. 
