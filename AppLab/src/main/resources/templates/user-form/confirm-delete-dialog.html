@@ -1,4 +1,4 @@
-<!-- Modal -->
+
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -9,12 +9,12 @@
         </button>
       </div>
       <div class="modal-body">
-       Estas seguro de que deseas eliminar a este usuario?
+       Estas seguro de que deseas eliminar a este usuario ?
         <input type="hidden" id="userIdHiddenInput" name="userIdHiddenInput"/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-outline-warning" th:onclick="deleteUser()">Eliminar Usuario</button>
+        <button type="button" class="btn btn-outline-success" th:onclick="deleteUser()">Eliminar Usuario</button>
       </div>
     </div>
   </div>

@@ -80,12 +80,7 @@ public class UserServiceImpl implements UserService {
 		return userRepository.save(toUser);
 	}
 
-	/**
-	 * Map everythin but the password.
-	 * 
-	 * @param from
-	 * @param to
-	 */
+
 	protected void mapUser(User from, User to) {
 		to.setUsername(from.getUsername());
 		to.setFirstName(from.getFirstName());
@@ -124,13 +119,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	private boolean isLoggedUserADMIN() {
-		// Obtener el usuario logeado
+
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		UserDetails loggedUser = null;
 		Object roles = null;
 
-		// Verificar que ese objeto traido de sesion es el usuario
+	
 		if (principal instanceof UserDetails) {
 			loggedUser = (UserDetails) principal;
 
@@ -141,12 +136,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	private User getLoggedUser() throws Exception {
-		// Obtener el usuario logeado
+
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		UserDetails loggedUser = null;
 
-		// Verificar que ese objeto traido de sesion es el usuario
+	
 		if (principal instanceof UserDetails) {
 			loggedUser = (UserDetails) principal;
 		}

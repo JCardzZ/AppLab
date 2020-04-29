@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-04-2020 a las 12:37:12
+-- Tiempo de generación: 29-04-2020 a las 19:19:04
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -65,11 +65,13 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `dui`, `email`, `first_name`, `last_name`, `password`, `username`) VALUES
 (1, '87664567', 'admin@admin.com', 'Administrador', 'Administrador', '$2a$04$7JVL/XCT9oeQCadDnupKr.3.OrwfdZYXtxxD6luNUu.lWC/Eq0fye', 'admin'),
-(4, '22222222-2', 'kevin@gmail.com', 'Kevin Luna', 'Serrano', '$2a$04$VOFXu/wKzqgpVIk2DklaLOe3bnEx6fGvMhXn02f3MFf6Kir3.EXQG', 'kevin'),
+(4, '22222222-2', 'kevin@gmail.com', 'Kevin Luna ', 'Serrano', '$2a$04$VOFXu/wKzqgpVIk2DklaLOe3bnEx6fGvMhXn02f3MFf6Kir3.EXQG', 'kevin'),
 (5, '22222444-4', 'carpio@gmail.com', 'Mauricio Alfonso', 'Tejada Carpio', '$2a$04$IpFTqqx0budhKs4DfflZg.xGcoCSr7k/ajsemBjr6bOHisRhMsoPS', 'mauricio'),
 (8, '99929993', 'fuentes@gmail.com', 'Antonhy Enmanuel', 'Fuentes Villacorta', '$2a$04$vgKJfrAXEu6seTivmEQd6eI9aAm09OSw55cqVHq..GAkAD7NocRuC', 'anto'),
 (9, '05768923-3', 'cardoza@gmail.com', 'Manuel Cardoza', 'Cardoza', '$2a$04$UUdc3QD7woutvFwAZNS.TumYd/NpSfuTeSUOdwXiGlkwxUUnE0enC', 'manuel'),
-(11, '45678909-8', 'edwin@gmail.com', 'Edwin Isac', 'Ramirez', '$2a$04$I6Uy4zdScKG2q7u1QaSH0OErfKg10TtReDZ6nMdpHDPXxgs.fKQ8O', 'edwin');
+(11, '45678909-8', 'edwin@gmail.com', 'Edwin Isac', 'Ramirez', '$2a$04$I6Uy4zdScKG2q7u1QaSH0OErfKg10TtReDZ6nMdpHDPXxgs.fKQ8O', 'edwin'),
+(14, '56793039-4', 'usuario@gmail.com', 'Usuario', 'Usuario', '$2a$04$eF9ItKEzQuvUnyHEKly4kOG/BG5BnADNMlVLtB/CFTdkBgzS4KnzS', 'usuario'),
+(16, '23436587-9', 'user@gmail.com', 'User ', 'User', '$2a$04$D6ccfAFpzZ2/34ZHtEGSwuZ3sLdT2HXnXu./mW717VjcmhhbK1O62', 'user');
 
 -- --------------------------------------------------------
 
@@ -92,7 +94,9 @@ INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
 (5, 1),
 (8, 1),
 (9, 1),
-(11, 1);
+(11, 1),
+(14, 2),
+(16, 2);
 
 --
 -- Índices para tablas volcadas
@@ -132,7 +136,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Restricciones para tablas volcadas
