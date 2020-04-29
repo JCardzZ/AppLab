@@ -37,8 +37,8 @@
 		th:text="${listErrorMessage}">Mensaje de error</div>
 </div>
 
-<script type="text/javascript">
 
+<script type="text/javascript">
 function confirmDelete(id){
 	$('#deleteModal').modal('show');
 	$("#userIdHiddenInput").val(id);
@@ -48,8 +48,4 @@ function deleteUser(){
 	var id = $("#userIdHiddenInput").val();
     window.location = "deleteUser/"+id;
 }
-	  
-});
-
-
 </script>
